@@ -1,0 +1,32 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vvod — диктовка и ввод текста для Windows и Android</title><meta name="description" content="Диктуйте — Vvod вставит готовый текст в любую программу. Буфер с историей, шаблоны, пароли. Работает офлайн."><style>:root{--bg:#fff;--fg:#1d2330;--mut:#5b6475;--card:#f3f5f9;--line:#e1e5ee;--acc:#2b6cff;--accfg:#fff}
+@media(prefers-color-scheme:dark){:root{--bg:#12151c;--fg:#e6e9f0;--mut:#9aa3b5;--card:#1b2029;--line:#2a313e;--acc:#5b8cff;--accfg:#0d1117}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:880px;margin:0 auto;padding:0 20px}header{padding:20px 0}header b{font-size:20px}
+nav a{margin-left:18px;color:var(--mut);text-decoration:none}nav a:hover{color:var(--fg)}header .w{display:flex;justify-content:space-between;align-items:center}
+.hero{padding:56px 0 40px}h1{font-size:clamp(30px,5.5vw,48px);line-height:1.15;margin:0 0 16px}
+.lead{font-size:20px;color:var(--mut);max-width:640px;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-block;padding:13px 22px;border-radius:10px;background:var(--acc);color:var(--accfg);text-decoration:none;font-weight:600}
+.btn.alt{background:var(--card);color:var(--fg);border:1px solid var(--line)}.note{color:var(--mut);font-size:14px;margin-top:12px}
+section{padding:32px 0}h2{font-size:26px;margin:0 0 16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--mut);font-size:15px}
+ol{padding-left:22px}li{margin:4px 0}code{background:var(--card);padding:1px 6px;border-radius:5px;font-size:.9em}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--card)}
+a{color:var(--acc)}footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 40px;color:var(--mut);font-size:14px}
+.doc{padding:24px 0}.doc h1{font-size:34px}</style></head><body>
+<header><div class="w"><b>Vvod</b><nav><a href="./">Главная</a><a href="privacy.html">Конфиденциальность</a></nav></div></header>
+<main class="w"><div class="hero"><h1>Скажите — Vvod напечатает<br>в любой программе</h1>
+<p class="lead">Диктовка вставляет готовый текст в активное окно чужого приложения. А ещё: история буфера обмена, шаблоны и сокращения, пароли с автозаполнением. Windows и Android, работает офлайн.</p>
+<div class="btns"><a class="btn" href="https://github.com/VladimirRice/Vvod-releases/releases/latest">Скачать для Windows и Android</a><a class="btn alt" href="#install">Как установить</a></div>
+<p class="note">Бесплатно, бета-версия. Данные остаются у вас: своего сервера нет.</p></div>
+<section><h2>Что умеет</h2><div class="grid">
+<div class="card"><h3>Диктовка</h3><p>Нажали, сказали — текст появился там, где стоит курсор. Распознавание Vosk работает полностью офлайн.</p></div>
+<div class="card"><h3>Буфер обмена с историей</h3><p>Всё скопированное сохраняется. Списки, поиск, закрепление, скрытые записи.</p></div>
+<div class="card"><h3>Шаблоны и сокращения</h3><p>Набрали короткое — получили целый текст. Подстановка даты, времени и своих переменных.</p></div>
+<div class="card"><h3>Пароли</h3><p>Автозаполнение в приложениях на Android и вставка по горячей клавише на Windows.</p></div>
+<div class="card"><h3>Синхронизация</h3><p>Между вашими устройствами через ваше облако (Яндекс.Диск, WebDAV). Содержимое шифруется вашим мастер-паролем.</p></div>
+<div class="card"><h3>Горячие клавиши</h3><p>Ctrl+Alt+B — буфер, Ctrl+Alt+K — шаблоны, Ctrl+Alt+P — пароли, Ctrl+Alt+D — диктовка.</p></div></div></section>
+<section><h2>Приватность</h2><p>У Vvod нет своего сервера, нет аналитики и рекламы. Всё хранится на вашем устройстве; синхронизация — по желанию и только в вашу папку. Подробно: <a href="privacy.html">политика конфиденциальности</a>.</p></section>
+<section id="install"><h2>Установка</h2><div class="grid">
+<div class="card"><h3>Windows</h3><ol><li>Скачайте <code>Vvod-x.y.z.msi</code> и запустите.</li><li>Если Windows пишет «Неизвестный издатель» — «Подробнее» → «Выполнить всё равно».</li><li>Права администратора не нужны. Vvod живёт значком у часов.</li></ol></div>
+<div class="card"><h3>Android</h3><ol><li>Скачайте <code>Vvod-x.y.z.apk</code> и откройте.</li><li>Разрешите установку из этого источника.</li><li>Новая версия ставится поверх прежней, данные сохраняются.</li></ol></div></div>
+<p class="note">Дальше приложение обновляется само: Настройки → Обновления.</p></section></main><footer><div class="w">© Vladimir Rice · <a href="mailto:vvodapp@yandex.ru">vvodapp@yandex.ru</a> · <a href="privacy.html">Политика конфиденциальности</a> · <a href="https://github.com/VladimirRice/Vvod-releases/releases">Все версии</a></div></footer></body></html>

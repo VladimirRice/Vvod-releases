@@ -1,0 +1,65 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Политика конфиденциальности Vvod</title><meta name="description" content="Какие данные хранит Vvod, куда они передаются и какие разрешения запрашивает приложение."><style>:root{--bg:#fff;--fg:#1d2330;--mut:#5b6475;--card:#f3f5f9;--line:#e1e5ee;--acc:#2b6cff;--accfg:#fff}
+@media(prefers-color-scheme:dark){:root{--bg:#12151c;--fg:#e6e9f0;--mut:#9aa3b5;--card:#1b2029;--line:#2a313e;--acc:#5b8cff;--accfg:#0d1117}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:880px;margin:0 auto;padding:0 20px}header{padding:20px 0}header b{font-size:20px}
+nav a{margin-left:18px;color:var(--mut);text-decoration:none}nav a:hover{color:var(--fg)}header .w{display:flex;justify-content:space-between;align-items:center}
+.hero{padding:56px 0 40px}h1{font-size:clamp(30px,5.5vw,48px);line-height:1.15;margin:0 0 16px}
+.lead{font-size:20px;color:var(--mut);max-width:640px;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-block;padding:13px 22px;border-radius:10px;background:var(--acc);color:var(--accfg);text-decoration:none;font-weight:600}
+.btn.alt{background:var(--card);color:var(--fg);border:1px solid var(--line)}.note{color:var(--mut);font-size:14px;margin-top:12px}
+section{padding:32px 0}h2{font-size:26px;margin:0 0 16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--mut);font-size:15px}
+ol{padding-left:22px}li{margin:4px 0}code{background:var(--card);padding:1px 6px;border-radius:5px;font-size:.9em}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--card)}
+a{color:var(--acc)}footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 40px;color:var(--mut);font-size:14px}
+.doc{padding:24px 0}.doc h1{font-size:34px}</style></head><body>
+<header><div class="w"><b>Vvod</b><nav><a href="./">Главная</a><a href="privacy.html">Конфиденциальность</a></nav></div></header><main class="w doc"><h1>Политика конфиденциальности Vvod</h1>
+<p class="note">Дата редакции: 2026-10-01 · Правообладатель: Vladimir Rice · <a href="mailto:vvodapp@yandex.ru">vvodapp@yandex.ru</a></p><p>Vvod — приложение для Windows и Android: диктовка, история буфера обмена, шаблоны текста, пароли, заметки. Коротко: <strong>у Vvod нет своего сервера, мы не собираем ваши данные и не видим их.</strong></p>
+<h2>1. Что хранится и где</h2>
+<p>Всё, что вы вводите (записи буфера, шаблоны, заметки, пароли, настройки), хранится <strong>на вашем устройстве</strong>, в папке приложения. Мы к этим данным доступа не имеем.</p>
+<h2>2. Синхронизация между устройствами (по желанию)</h2>
+<p>Если вы включили синхронизацию, данные передаются <strong>только</strong> в облачную папку, которую вы указали сами (WebDAV, например Яндекс.Диск), на ваш аккаунт.</p>
+<ul>
+<li>Содержимое перед отправкой шифруется мастер-паролем, который знаете только вы. Мы его не получаем и восстановить не можем: забытый мастер-пароль восстановлению не подлежит.</li>
+<li>Доступ к облаку идёт по логину и паролю приложения, которые вы вводите сами; они хранятся на устройстве в зашифрованном виде и в синхронизацию не попадают.</li>
+<li>Условия хранения в облаке определяет его владелец (например, Яндекс), а не мы.</li>
+</ul>
+<p>Без синхронизации приложение работает полностью офлайн.</p>
+<h2>3. Диктовка</h2>
+<ul>
+<li><strong>Офлайн-распознавание (Vosk)</strong> работает целиком на устройстве, звук никуда не передаётся.</li>
+<li><strong>Системное распознавание Android</strong> («Системный (точнее, нужен интернет)») — <strong>включено по умолчанию</strong>. Звук обрабатывает сервис распознавания речи на вашем телефоне (обычно Google) — по его правилам, а не нашим; Vvod получает от него только готовый текст. Если не хотите, чтобы речь покидала устройство, выберите в настройках диктовки <strong>Vosk — полностью офлайн</strong>.</li>
+<li>Микрофон включается только когда вы запустили диктовку. Записи звука Vvod не сохраняет.</li>
+</ul>
+<h2>4. Доступ, который запрашивает Android, и зачем</h2>
+<table><thead><tr><th>Разрешение / служба</th><th>Зачем</th></tr></thead><tbody>
+<tr><td>Микрофон</td><td>Только для диктовки</td></tr>
+<tr><td>Служба специальных возможностей</td><td>Видеть копирование текста, чтобы сохранять его в историю буфера, и вставлять текст в активное поле. Включается вами вручную в настройках Android</td></tr>
+<tr><td>Поверх других приложений</td><td>Плавающая кнопка Vvod и полоска диктовки</td></tr>
+<tr><td>Служба автозаполнения</td><td>Подставлять сохранённые вами пароли в формы. Включается вами</td></tr>
+<tr><td>Интернет</td><td>Синхронизация в вашу папку и проверка обновлений</td></tr>
+<tr><td>Уведомления, точные будильники</td><td>Напоминания заметок, показ диктовки в шторке</td></tr>
+<tr><td>Запуск при включении</td><td>Вернуть плавающую кнопку после перезагрузки</td></tr>
+<tr><td>Установка пакетов</td><td>Только установка скачанного вами обновления Vvod</td></tr>
+</tbody></table>
+<p>Эти возможности используются только для работы функций, которые вы включили. <strong>Содержимое экрана, копируемый текст и пароли мы не отправляем никому.</strong></p>
+<h2>5. Проверка обновлений</h2>
+<p>Приложение периодически запрашивает с публичной страницы релизов GitHub небольшой файл <code>version.json</code> (номер версии). В запросе нет ваших данных, кроме технической информации, которую любой сайт получает при обращении: IP-адрес и т. п. — их видит GitHub. Автоматическую проверку можно отключить в Настройки → Обновления.</p>
+<h2>6. Чего мы не делаем</h2>
+<ul>
+<li>Не собираем аналитику, телеметрию и отчёты об ошибках.</li>
+<li>Не показываем рекламу и не встраиваем сторонние рекламные и трекерные SDK.</li>
+<li>Не передаём данные третьим лицам и не продаём их.</li>
+<li>Не используем ваши данные для обучения моделей.</li>
+</ul>
+<h2>7. Если появится ИИ</h2>
+<p>Сейчас в Vvod нет обращений к ИИ-сервисам. Если они появятся, то только по вашему явному действию над конкретным текстом, с вашим собственным ключом провайдера; пароли и скрытые записи наружу не отправляются никогда. Политика будет обновлена до выхода такой версии.</p>
+<h2>8. Удаление данных</h2>
+<p>Удалите приложение — локальные данные исчезнут вместе с ним. Данные в вашем облаке удаляются вами в самом облаке: это ваша папка. Через команду «Забыть устройство» можно убрать устройство из списка синхронизации.</p>
+<h2>9. Дети</h2>
+<p>Vvod не предназначен для детей младше 14 лет и не собирает данные о возрасте.</p>
+<h2>10. Изменения политики</h2>
+<p>Новая редакция публикуется на этой странице с новой датой. Существенные изменения будут отмечены в журнале изменений.</p>
+<h2>11. Связь</h2>
+<p><strong>vvodapp@yandex.ru</strong></p>
+</main><footer><div class="w">© Vladimir Rice · <a href="mailto:vvodapp@yandex.ru">vvodapp@yandex.ru</a> · <a href="privacy.html">Политика конфиденциальности</a> · <a href="https://github.com/VladimirRice/Vvod-releases/releases">Все версии</a></div></footer></body></html>
