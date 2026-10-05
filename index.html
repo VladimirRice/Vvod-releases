@@ -12,12 +12,17 @@ section{padding:32px 0}h2{font-size:26px;margin:0 0 16px}.grid{display:grid;grid
 ol{padding-left:22px}li{margin:4px 0}code{background:var(--card);padding:1px 6px;border-radius:5px;font-size:.9em}
 table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--card)}
 a{color:var(--acc)}footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 40px;color:var(--mut);font-size:14px}
-.doc{padding:24px 0}.doc h1{font-size:34px}</style></head><body>
+.doc{padding:24px 0}.doc h1{font-size:34px}
+.shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;margin:0 -2px}
+.shot{flex:0 0 auto;width:min(240px,62vw);scroll-snap-align:start;margin:0}
+.shot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:var(--card)}
+.shot figcaption{margin-top:8px;font-size:14px;color:var(--mut)}</style></head><body>
 <header><div class="w"><b>Vvod</b><nav><a href="./">Главная</a><a href="privacy.html">Конфиденциальность</a></nav></div></header>
 <main class="w"><div class="hero"><h1>Скажите — Vvod напечатает<br>в любой программе</h1>
 <p class="lead">Диктовка вставляет готовый текст в активное окно чужого приложения. А ещё: история буфера обмена, шаблоны и сокращения, пароли с автозаполнением. Windows и Android, работает офлайн.</p>
 <div class="btns"><a class="btn" href="https://t.me/vvod_app">Следить за выходом в Telegram</a></div>
 <p class="note">Бета-версия готовится к публикации в RuStore. Бесплатно; данные остаются у вас: своего сервера нет.</p></div>
+<section><h2>Как это выглядит</h2><div class="shots"><figure class="shot"><img src="img/01-diktovka.png" alt="Vvod: Диктовка" loading="lazy" width="540" height="1146"><figcaption>Скажите — текст появится в поле другого приложения</figcaption></figure><figure class="shot"><img src="img/02-bufer.png" alt="Vvod: Буфер обмена" loading="lazy" width="540" height="1146"><figcaption>История скопированного, списки и поиск</figcaption></figure><figure class="shot"><img src="img/06-perevod-vydelennogo.png" alt="Vvod: Перевод" loading="lazy" width="540" height="1146"><figcaption>Выделили текст — перевод рядом, можно скопировать</figcaption></figure><figure class="shot"><img src="img/08-redaktor.png" alt="Vvod: Снимок области" loading="lazy" width="540" height="1146"><figcaption>Стрелки, рамки, мозаика на снимке экрана</figcaption></figure><figure class="shot"><img src="img/03-shablony.png" alt="Vvod: Шаблоны" loading="lazy" width="540" height="1146"><figcaption>Короткое сокращение — готовый текст</figcaption></figure><figure class="shot"><img src="img/04-zametki.png" alt="Vvod: Заметки" loading="lazy" width="540" height="1146"><figcaption>Короткие записи с напоминанием</figcaption></figure><figure class="shot"><img src="img/09-perenos.png" alt="Vvod: Перенос паролей" loading="lazy" width="540" height="1146"><figcaption>Импорт из других программ и экспорт обратно</figcaption></figure></div></section>
 <section><h2>Что умеет</h2><div class="grid">
 <div class="card"><h3>Диктовка</h3><p>Нажали, сказали — текст появился там, где стоит курсор. Распознавание Vosk работает полностью офлайн.</p></div>
 <div class="card"><h3>Буфер обмена с историей</h3><p>Всё скопированное сохраняется. Списки, поиск, закрепление, скрытые записи.</p></div>
