@@ -1,0 +1,126 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Как подключить телефон и компьютер — синхронизация Vvod и мастер-пароль</title><meta name="description" content="Пошагово: установка, подключение Яндекс.Диска через API или WebDAV, что такое токен, что такое мастер-пароль и что делать, если записи не появились."><link rel="canonical" href="https://vladimirrice.github.io/Vvod-releases/start/"><meta property="og:type" content="website"><meta property="og:site_name" content="Vvod"><meta property="og:title" content="Как подключить телефон и компьютер — синхронизация Vvod и мастер-пароль"><meta property="og:description" content="Пошагово: установка, подключение Яндекс.Диска через API или WebDAV, что такое токен, что такое мастер-пароль и что делать, если записи не появились."><meta property="og:url" content="https://vladimirrice.github.io/Vvod-releases/start/"><meta property="og:image" content="https://vladimirrice.github.io/Vvod-releases/img/01-diktovka.png"><meta name="twitter:card" content="summary_large_image"><meta name="yandex-verification" content="d1b5f64190a8d55d"><meta name="google-site-verification" content="YqmgE7JfbDGaPRgZAuSs1eg147nCK_oiyzR3bu2pntA"><link rel="icon" href="https://vladimirrice.github.io/Vvod-releases/favicon.svg" type="image/svg+xml"><style>:root{--bg:#fff;--fg:#1d2330;--mut:#5b6475;--card:#f3f5f9;--line:#e1e5ee;--acc:#2b6cff;--accfg:#fff}
+@media(prefers-color-scheme:dark){:root{--bg:#12151c;--fg:#e6e9f0;--mut:#9aa3b5;--card:#1b2029;--line:#2a313e;--acc:#5b8cff;--accfg:#0d1117}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:880px;margin:0 auto;padding:0 20px}header{padding:20px 0}header b{font-size:20px}
+nav a{margin-left:18px;color:var(--mut);text-decoration:none}nav a:hover{color:var(--fg)}header .w{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.hero{padding:56px 0 40px}h1{font-size:clamp(30px,5.5vw,48px);line-height:1.15;margin:0 0 16px}
+.lead{font-size:20px;color:var(--mut);max-width:640px;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}.doc textarea{width:100%;box-sizing:border-box;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:14px/1.5 ui-monospace,Consolas,monospace;resize:vertical;margin:8px 0}.doc button.btn{border:0;cursor:pointer}.btn{display:inline-block;padding:13px 22px;border-radius:10px;background:var(--acc);color:var(--accfg);text-decoration:none;font-weight:600}
+.btn.alt{background:var(--card);color:var(--fg);border:1px solid var(--line)}.note{color:var(--mut);font-size:14px;margin-top:12px}
+section{padding:32px 0}h2{font-size:26px;margin:0 0 16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--mut);font-size:15px}
+ol{padding-left:22px}li{margin:4px 0}code{background:var(--card);padding:1px 6px;border-radius:5px;font-size:.9em}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--card)}
+a{color:var(--acc)}footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 40px;color:var(--mut);font-size:14px}
+.doc{padding:24px 0}.doc h1{font-size:34px}
+.links{padding:8px 0 24px}.links a{display:inline-block;margin:0 14px 8px 0}
+.shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;margin:0 -2px}
+.shot{flex:0 0 auto;width:min(240px,62vw);scroll-snap-align:start;margin:0}
+.shot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:var(--card)}
+.shot figcaption{margin-top:8px;font-size:14px;color:var(--mut)}</style><script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(113656998,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/113656998" style="position:absolute;left:-9999px" alt=""></noscript></head><body>
+<header><div class="w"><b>Vvod</b><nav><a href="https://vladimirrice.github.io/Vvod-releases/">Главная</a><a href="https://vladimirrice.github.io/Vvod-releases/install/">Скачать Vvod для Windows и Android</a><a href="https://vladimirrice.github.io/Vvod-releases/dictation-windows/">Диктовка на компьютере офлайн</a><a href="https://vladimirrice.github.io/Vvod-releases/dictation-android/">Голосовой ввод на Android</a><a href="https://vladimirrice.github.io/Vvod-releases/clipboard-history/">История буфера обмена Windows и Android</a><a href="https://vladimirrice.github.io/Vvod-releases/files-in-clipboard/">Файлы в буфере обмена</a><a href="https://vladimirrice.github.io/Vvod-releases/clipboard-android/">Буфер обмена на Android</a><a href="https://vladimirrice.github.io/Vvod-releases/text-templates/">Шаблоны текста и сокращения</a><a href="https://vladimirrice.github.io/Vvod-releases/macros/">Макросы и переменные в шаблонах текста</a><a href="https://vladimirrice.github.io/Vvod-releases/word-documents/">Заполнить шаблон Word (.docx) автоматически</a><a href="https://vladimirrice.github.io/Vvod-releases/notes/">Заметки с напоминаниями на Windows и Android</a><a href="https://vladimirrice.github.io/Vvod-releases/password-autofill-android/">Автозаполнение паролей на Android</a><a href="https://vladimirrice.github.io/Vvod-releases/password-windows/">Вставка пароля в программу на компьютере</a><a href="https://vladimirrice.github.io/Vvod-releases/password-import-export/">Импорт и экспорт паролей</a><a href="https://vladimirrice.github.io/Vvod-releases/secure-data/">Защищенные данные</a><a href="https://vladimirrice.github.io/Vvod-releases/license/">Лицензия</a><a href="https://vladimirrice.github.io/Vvod-releases/encryption/">Шифрование данных: что защищено и что нет</a><a href="https://vladimirrice.github.io/Vvod-releases/sync-without-server/">Синхронизация без сервера между телефоном и компьютером</a><a href="https://vladimirrice.github.io/Vvod-releases/two-devices/">Синхронизация телефона и компьютера с нуля</a><a href="https://vladimirrice.github.io/Vvod-releases/screenshot-editor/">Снимок экрана и редактор: стрелки, рамки, мозаика</a><a href="https://vladimirrice.github.io/Vvod-releases/translate-screen-area/">Перевод выделенного текста и области экрана</a><a href="https://vladimirrice.github.io/Vvod-releases/offline-mode/">Офлайн-режим</a><a href="https://vladimirrice.github.io/Vvod-releases/changelog/">Что нового в Vvod</a><a href="https://vladimirrice.github.io/Vvod-releases/start/">Как подключить телефон и компьютер</a><a href="https://vladimirrice.github.io/Vvod-releases/beta/">Бета-тестирование Vvod</a><a href="https://vladimirrice.github.io/Vvod-releases/faq/">Вопросы и ответы о Vvod</a><a href="https://vladimirrice.github.io/Vvod-releases/privacy.html">Конфиденциальность</a></nav></div></header><main class="w doc"><h1>Как подключить телефон и компьютер и что такое мастер-пароль</h1>
+<p>Если вы только что установили Vvod — начните отсюда. Здесь по шагам: как связать компьютер и телефон, чтобы записи появлялись на обоих, какой способ синхронизации выбрать и что такое мастер-пароль, чтобы случайно не потерять данные.</p>
+<p>Занимает 15–20 минут. Читайте по порядку и делайте шаг за шагом — специальных знаний не нужно.</p>
+<h2>Что понадобится</h2>
+<ul>
+<li>Компьютер с Windows и телефон на Android.</li>
+<li>Интернет на обоих устройствах.</li>
+<li>Аккаунт Яндекса (почта на Яндексе) — самый простой вариант. Если есть другое облако с поддержкой WebDAV (Nextcloud, Box и подобные), подойдет и оно.</li>
+<li>15–20 минут времени.</li>
+</ul>
+<h2>Что такое синхронизация (простыми словами)</h2>
+<p>У Vvod нет своего сервера: мы не храним ваши записи и не можем их увидеть. Вместо этого Vvod кладет один зашифрованный файл в вашу личную папку в облаке — например, на ваш Яндекс.Диск. Телефон и компьютер читают и обновляют этот файл.</p>
+<p>Как это выглядит на практике: вы скопировали текст на компьютере — он появился в буфере телефона. Вы сохранили пароль на телефоне — он появился на компьютере. Файлы и заметки — так же.</p>
+<p>В облаке лежит не текст, а шифр. Даже если кто-то получит доступ к вашей папке на Диске, без мастер-пароля он увидит только набор символов.</p>
+<h2>Какой способ выбрать</h2>
+<p>Лучший вариант — <strong>«Яндекс.Диск через API»</strong>. Почему: вход по кнопке в браузере, не нужно создавать пароль приложения, Vvod работает только в своей папке на Диске и не видит остальные ваши файлы. Подходит и без платной подписки на Диск.</p>
+<p>Второй вариант — <strong>WebDAV</strong>. Берите, если у вас уже есть облако с WebDAV (Яндекс.Диск с подпиской, Nextcloud, Box и т.п.) или вы синхронизировались через него раньше. Здесь понадобится «пароль приложения» — отдельный пароль для программ, его выдает облако.</p>
+<p>Чего делать не нужно: открывать папку на компьютере «в сеть» — это сложнее и работает только в одной домашней сети.</p>
+<h2>Шаг 1. Установите Vvod на компьютер</h2>
+<h2>Шаг 2. Включите синхронизацию на компьютере</h2>
+<p>Если выбрали <strong>WebDAV</strong>, порядок такой:</p>
+<h2>Токен: что это такое и зачем он нужен</h2>
+<p>Токен — это <strong>пропуск от Яндекса</strong>, а не пароль и не ключ шифрования. Длинная строка вроде <code>y0_AgAAAAB...</code> говорит Диску: «этому приложению Vvod разрешено положить файл в свою папку и прочитать его». Больше ничего токен не открывает.</p>
+<p>Зачем он нужен:</p>
+<ul>
+<li>Vvod сам не может войти в ваш аккаунт: пароль от Яндекса он не спрашивает и не хранит.</li>
+<li>По нажатию «Получить токен в браузере» вы входите в Яндекс и нажимаете «Разрешить». Яндекс выдает пропуск именно для Vvod.</li>
+<li>С этим пропуском Vvod кладет зашифрованный файл в папку приложения на вашем Диске и читает его оттуда. Ваши остальные файлы на Диске он не видит.</li>
+</ul>
+<p>Чем токен отличается от пароля Яндекса:</p>
+<ul>
+<li>Пароль Яндекса открывает всю почту и все файлы. Токен — только папку Vvod.</li>
+<li>Если токен попадет к чужому, он получит доступ к папке Vvod, но не к вашей почте. А данные в папке зашифрованы мастер-паролем: без него это набор символов.</li>
+<li>Токен можно отозвать в любой момент: Яндекс ID → «Безопасность» → «Пароли и токены приложений» (название может отличаться) → удалить доступ Vvod. Синхронизация после этого попросит получить новый токен.</li>
+</ul>
+<p>Где он хранится и нужен ли на каждом устройстве:</p>
+<ul>
+<li>Токен хранится только на том устройстве, где вы его вставили, в зашифрованном виде. В облако и в синхронизацию настроек он не уходит.</li>
+<li>На телефоне нужен <strong>свой</strong> токен: получите его там же, в настройках синхронизации, тем же способом. А вот логин Яндекса на всех устройствах должен быть одинаковым — иначе устройства не найдут общую папку и не смогут расшифровать записи друг друга.</li>
+<li>Токен потерялся или вы его отозвали? Не страшно: получите новый, вставьте, нажмите «Проверить подключение». Записи и файлы в облаке не пропадут.</li>
+</ul>
+<p>Если не хотите давать токен: подойдет WebDAV с паролем приложения. Идея та же — отдельный пропуск для программы, а не ваш пароль от аккаунта. Разница: пароль приложения от Яндекс.Диска обычно дает доступ ко всем файлам на Диске, а токен — только к папке Vvod. Поэтому токен безопаснее.</p>
+<h2>Шаг 3. Придумайте мастер-пароль</h2>
+<p>Мастер-пароль — это ключ, которым Vvod шифрует ваши записи перед отправкой в облако. Без него файл в облаке прочитать нельзя.</p>
+<p>Где задать: <strong>Настройки → Безопасность → «Мастер-пароль»</strong>. На компьютере и на телефоне — в одном и том же месте.</p>
+<p>Требования простые: не короче 8 символов (можно буквы, цифры, знаки), вводится дважды — «Новый мастер-пароль» и «Повторите пароль».</p>
+<p>Три правила, которые сохранят ваши данные:</p>
+<p>Если мастер-пароль забыт — восстановить записи нельзя. Поэтому заранее включите «Страховочный экспорт паролей» (Настройки → Архивация): это зашифрованная копия паролей, которая открывается отдельным скриптом даже без Vvod. Пароль для нее тоже надо запомнить.</p>
+<h2>Шаг 4. Установите и настройте телефон</h2>
+<p>Когда мастер-пароль введен правильно и обмен прошел, записи с компьютера появятся на телефоне.</p>
+<h2>Шаг 5. Проверьте, что все получилось</h2>
+<h2>Мастер-пароль: что это и зачем</h2>
+<p>Мастер-пароль — это <strong>ключ шифрования ваших данных</strong>. Из него (и логина Яндекса) Vvod вычисляет ключ, которым зашифрованы буфер обмена, шаблоны, заметки, пароли, карты, документы и вложения — и на устройстве, и перед отправкой в облако.</p>
+<p>Зачем нужен отдельный пароль, если есть пароль Яндекса:</p>
+<ul>
+<li>Облако хранит только шифр. Даже если кто-то получит доступ к вашей папке на Диске или к самому Диску, без мастер-пароля он увидит набор символов.</li>
+<li>Провайдер облака тоже не может прочитать данные: ключ известен только вам.</li>
+<li>Без мастер-пароля разделы работают только для чтения, а синхронизация не отправляет записи: шифровать нечем.</li>
+</ul>
+<p>Где он хранится:</p>
+<ul>
+<li><strong>Нигде в открытом виде.</strong> На диске лежит только проверочное значение, по нему нельзя восстановить пароль.</li>
+<li>В памяти устройства, пока приложение работает. На этом же устройстве Vvod может запомнить ключ в защищенном хранилище системы (Windows или Android), чтобы не спрашивать каждый раз.</li>
+<li>На новом устройстве пароль вводится вручную. По сети он не передается никогда.</li>
+</ul>
+<p>Почему он должен быть одинаковым на всех устройствах:</p>
+<ul>
+<li>Ключ вычисляется из мастер-пароля и логина. Одинаковые пароль и логин — одинаковый ключ, устройства читают записи друг друга.</li>
+<li>Разные пароли — разные ключи: телефон увидит шифр и напишет «Не расшифровано» или покажет пустые списки. Верните прежний пароль на обоих устройствах — данные снова прочитаются.</li>
+</ul>
+<p>Что будет, если забыть:</p>
+<ul>
+<li>Восстановить нельзя — ни нам, ни вам: пароля нет ни на сервере, ни на диске.</li>
+<li>Записи в облаке останутся зашифрованными и бесполезными.</li>
+<li>Пароли можно спасти, только если заранее был включен <strong>«Страховочный экспорт паролей»</strong> (Настройки → Архивация): это отдельная зашифрованная копия, открывается своим паролем.</li>
+<li>Остальные записи придется завести заново. Поэтому запишите мастер-пароль на бумаге и уберите в надежное место.</li>
+</ul>
+<p>Чем мастер-пароль отличается от пароля Windows, отпечатка и Hello:</p>
+<ul>
+<li>Пароль Windows, отпечаток пальца и Windows Hello — это <strong>пропуск к устройству и экрану</strong>. Они не заменяют мастер-пароль.</li>
+<li>Отпечаток или Hello открывают <strong>уже сохраненный на этом устройстве</strong> ключ. На новом устройстве без мастер-пароля они бесполезны.</li>
+<li>Мастер-пароль — ключ к самим данным, на любом устройстве.</li>
+</ul>
+<p>Можно ли поменять мастер-пароль:</p>
+<ul>
+<li>В текущей версии смена — это «Сбросить хранилище и настроить заново» (Настройки → Безопасность). После сброса записи, зашифрованные прежним паролем, станут нечитаемыми.</li>
+<li>Поэтому выбирайте пароль сразу надежным и записывайте его. Если все же нужно сменить — сначала включите страховочный экспорт паролей и сделайте резервную копию.</li>
+</ul>
+<p>Короткая памятка: <strong>токен открывает папку в облаке, мастер-пароль открывает данные. Токен можно перевыпустить, мастер-пароль — нет.</strong></p>
+<h2>Частые проблемы и что делать</h2>
+<table><thead><tr><th>Что видно</th><th>Что делать</th></tr></thead><tbody>
+<tr><td>«Синхронизация не настроена»</td><td>Открыть Настройки → Синхронизация и заполнить данные (токен и логин).</td></tr>
+<tr><td>«Не расшифровано: хранилище заперто — введите мастер-пароль»</td><td>Настройки → Безопасность, ввести мастер-пароль, затем «Синхронизировать сейчас». Данные в облаке целы.</td></tr>
+<tr><td>«Не синхронизировано: нет сети»</td><td>Проверить интернет. Записи сохраняются на устройстве и уедут сами, когда связь появится.</td></tr>
+<tr><td>На компьютере записи есть, на телефоне пусто</td><td>Сверить: тот же логин Яндекса? тот же мастер-пароль? нажать «Синхронизировать сейчас».</td></tr>
+<tr><td>«Мастер-пароль не подходит»</td><td>Проверить раскладку и регистр. Если пароль точно верный, но не читается — напишите нам (см. ниже).</td></tr>
+<tr><td>Синхронизация идет долго</td><td>Первый обмен с картинками и файлами может идти минутами. Смотрите на прогресс и время в строке состояния.</td></tr>
+<tr><td>Телефон больше не нужен</td><td>Настройки → Синхронизация → «Устройства» → «Забыть» у этого телефона. Записи не удаляются.</td></tr>
+<tr><td>Хочу сменить облако или папку</td><td>Поменяйте настройки синхронизации на всех устройствах одинаково, затем «Синхронизировать сейчас».</td></tr>
+</tbody></table>
+<h2>Правила, чтобы не потерять данные</h2>
+<h2>Если не получилось</h2>
+<p>Напишите нам: Telegram <code>@rvoapp</code> или почта <code>vvodapp@rvoapp.ru</code>. Укажите, что делали, что получилось, и версию приложения (она видна в «Настройках» и в разделе «О приложении»). Скриншот экрана синхронизации тоже поможет — там видно, на каком шаге остановились.</p>
+<h2>Скачать Vvod</h2>
+<p>Установщик для Windows и APK для Android — на странице <a href="https://vladimirrice.github.io/Vvod-releases/install/">Скачать и установить</a>. Там же, что делать, если Windows пишет «Неизвестный издатель».</p>
+</main><footer><div class="w">© ООО «БИФ» · <a href="https://rvoapp.ru">rvoapp.ru</a> · <a href="mailto:vvodapp@rvoapp.ru">vvodapp@rvoapp.ru</a> · <a href="https://t.me/rvoapp">Telegram</a> · <a href="https://max.ru/channel_rvoapp">MAX</a> · <a href="privacy.html">Политика конфиденциальности</a> · <a href="https://github.com/VladimirRice/Vvod-releases/releases">Все версии</a></div></footer><script>document.addEventListener("click",function(e){var t=e.target;var a=t&&t.closest?t.closest("a"):null;if(!a)return;var h=a.getAttribute("href")||"";if(h.indexOf("/releases/latest")>=0||h.indexOf("/releases/download/")>=0){ym(113656998,"reachGoal","download")}else if(h.indexOf("rustore.ru")>=0){ym(113656998,"reachGoal","store_rustore")}});</script></body></html>
